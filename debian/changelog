@@ -1,0 +1,69 @@
+golang-github-gosexy-gettext (0~git20130221-2.1) unstable; urgency=medium
+
+  [ Dr. Tobias Quathamer ]
+  * Non-maintainer upload.
+  * Use debhelper v11
+  * Update to Standards-Version 4.2.1
+    - Use HTTPS URL for d/copyright
+    - Use Priority: optional
+  * Build-Depend on golang-any instead of golang-go
+  * Remove Built-Using from -dev package
+
+  [ Michael Stapelberg ]
+  * Set XS-Go-Import-Path. (Closes: #890058)
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Sat, 01 Dec 2018 21:49:11 +0100
+
+golang-github-gosexy-gettext (0~git20130221-2) unstable; urgency=medium
+
+  * No-change rebuild against current golang.  Closes: #860608.
+
+ -- Steve Langasek <vorlon@debian.org>  Tue, 16 May 2017 04:41:32 +0000
+
+golang-github-gosexy-gettext (0~git20130221-1) unstable; urgency=medium
+
+  * Initial Debian upload.
+  * Update to Standards-Version 3.9.7.
+
+ -- Steve Langasek <vorlon@debian.org>  Mon, 16 May 2016 22:48:21 +0000
+
+golang-github-gosexy-gettext (0~git20130221-0ubuntu6) xenial; urgency=medium
+
+  * fix missing breaks/replaces to provide clean uprade path
+  * add missing section: oldlibs to transitional package
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 09 Mar 2016 09:05:43 +0100
+
+golang-github-gosexy-gettext (0~git20130221-0ubuntu5) xenial; urgency=medium
+
+  * Actually install the go code in package
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 08 Mar 2016 09:59:44 +0100
+
+golang-github-gosexy-gettext (0~git20130221-0ubuntu4) xenial; urgency=medium
+
+  * Rename the package as requested by the MIR team.
+    This is in order to comply with the Debian golang packaging
+    guideline (as silly as the name may now look like...).
+  * Introduce a transitional package for the old binary name.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 09 Dec 2015 17:29:35 -0500
+
+golang-gettext (0~git20130221-0ubuntu3) wily; urgency=medium
+
+  * debian/rules: Re-enable tests, they just needed to be run in a
+    utf8 locale
+
+ -- Michael Terry <mterry@ubuntu.com>  Tue, 18 Aug 2015 11:08:58 -0400
+
+golang-gettext (0~git20130221-0ubuntu2) wily; urgency=medium
+
+  * debian/rules: Disable tests, they need working locales
+
+ -- Michael Terry <mterry@ubuntu.com>  Fri, 19 Jun 2015 09:57:30 -0400
+
+golang-gettext (0~git20130221-0ubuntu1) wily; urgency=low
+
+  * Initial package.
+
+ -- Michael Terry <mterry@ubuntu.com>  Tue, 16 Jun 2015 15:08:05 -0400

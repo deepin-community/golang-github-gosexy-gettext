@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+# -*- Mode: Makefile; indent-tabs-mode: t -*-
+
+export DH_OPTIONS
+export DH_GOPKG := github.com/gosexy/gettext
+export DH_GOLANG_EXCLUDES := examples
+
+export PKD = $(abspath $(dir $(MAKEFILE_LIST)))
+export PKG = $(shell dpkg-parsechangelog -l$(PKD)/changelog --show-field=Source)
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_build:
+	dh_auto_build
+	# We should ship example files because gettext_test.go uses them, and we ship that
+	cp -r examples/*/ obj-*/src/github.com/gosexy/gettext/examples/
+	# But we don't need the example code itself or the pot files
+	rm obj-*/src/github.com/gosexy/gettext/examples/gettext.go
+	rm obj-*/src/github.com/gosexy/gettext/examples/*/*.pot
+
+override_dh_auto_test:
+	LC_ALL=C.UTF-8 dh_auto_test
+
+get-orig-source:
+	rm -rf $(PKG)
+	git clone https://$(DH_GOPKG) $(PKG)
+	echo $(shell git -C $(PKG) log --date=short -r -1 | grep ^Date: | cut -d: -f2 | tr -d ' -')
+	tar -caf "$(PKG)_0~git$(shell git -C $(PKG) log --date=short -r -1 | grep ^Date: | cut -d: -f2 | tr -d ' -').orig.tar.xz" --exclude-vcs --owner=root --group=root --mode=a+rX $(PKG)
+	rm -rf $(PKG)

@@ -1,0 +1,19 @@
+Source: golang-github-gosexy-gettext
+Section: devel
+Priority: optional
+Maintainer: Steve Langasek <vorlon@debian.org>
+Build-Depends: debhelper (>= 11~),
+               dh-golang,
+               golang-any,
+Standards-Version: 4.2.1
+Homepage: https://github.com/gosexy/gettext
+XS-Go-Import-Path: github.com/gosexy/gettext
+
+Package: golang-github-gosexy-gettext-dev
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: golang-gettext-dev (<< 0~git20130221-0ubuntu4~)
+Breaks: golang-gettext-dev (<< 0~git20130221-0ubuntu4~)
+Description: Gettext support for the Go language
+ The gettext package enables Go programs to use gettext library calls for
+ translation support.
