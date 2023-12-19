@@ -1,3 +1,10 @@
+golang-github-gosexy-gettext (0~git20130221-2.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Run tests with LC_ALL=en_US.utf8 (Closes: #1052803)
+
+ -- Mathias Gibbens <gibmat@debian.org>  Fri, 10 Nov 2023 19:12:55 +0000
+
 golang-github-gosexy-gettext (0~git20130221-2.1) unstable; urgency=medium
 
   [ Dr. Tobias Quathamer ]

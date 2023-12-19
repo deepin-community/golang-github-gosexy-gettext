@@ -5,6 +5,7 @@ Maintainer: Steve Langasek <vorlon@debian.org>
 Build-Depends: debhelper (>= 11~),
                dh-golang,
                golang-any,
+               locales-all
 Standards-Version: 4.2.1
 Homepage: https://github.com/gosexy/gettext
 XS-Go-Import-Path: github.com/gosexy/gettext
